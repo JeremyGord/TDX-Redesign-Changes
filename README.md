@@ -1,7 +1,7 @@
 # TDX-Redesign-Changes
 A place to log TDX changes and backup code before the quarterly sandbox refresh. 
 
-                               HELPFUL LINKS
+                               Helpful Links
 Client Portal Sandbox Link -
 https://utm.teamdynamix.com/SBTDClient/2421/ITS-Portal/Home/#
 
