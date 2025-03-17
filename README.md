@@ -11,5 +11,4 @@ https://www.utm.edu/offices-and-services/office-of-university-relations/_media/U
 HTML Allowlists -
 https://solutions.teamdynamix.com/TDClient/1965/Portal/KB/ArticleDet?ID=48230
 
-Client Portal Examples -
-Article - Client Portal Examples
+Client Portal Examples - https://solutions.teamdynamix.com/TDClient/1965/Portal/KB/ArticleDet?ID=32253
