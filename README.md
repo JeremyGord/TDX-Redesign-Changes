@@ -12,3 +12,8 @@ HTML Allowlists -
 https://solutions.teamdynamix.com/TDClient/1965/Portal/KB/ArticleDet?ID=48230
 
 Client Portal Examples - https://solutions.teamdynamix.com/TDClient/1965/Portal/KB/ArticleDet?ID=32253
+
+                              Helpful Text
+
+UTM Blue - #0a223e
+UTM Orange - #e58117
