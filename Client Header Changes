@@ -1,0 +1,3 @@
+<div class="alert alert-danger" role="alert">
+<h4 class="alert-heading" style="text-align: center"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> This is a testing environment. Do not create real tickets from this portal.</h4>
+</div>
