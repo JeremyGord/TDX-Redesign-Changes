@@ -1,7 +1,7 @@
 # TDX-Redesign-Changes
 A place to log TDX changes and backup code before the quarterly sandbox refresh. 
 
-                               Helpful Links
+                                                                                                                                Helpful Links
 Client Portal Sandbox Link -
 https://utm.teamdynamix.com/SBTDClient/2421/ITS-Portal/Home/#
 
@@ -13,13 +13,13 @@ https://solutions.teamdynamix.com/TDClient/1965/Portal/KB/ArticleDet?ID=48230
 
 Client Portal Examples - https://solutions.teamdynamix.com/TDClient/1965/Portal/KB/ArticleDet?ID=32253
 
-                              Helpful Text
+                                                                                                                               Helpful Text
 
 UTM Blue - #0a223e
 
 UTM Orange - #e58117
 
-                                  Prototype
+                                                                                                                                Prototype
 
 
 ![ClientPortalPrototype](https://github.com/user-attachments/assets/079c0b5b-e19d-4bf9-8373-283fb8e6d94a)
