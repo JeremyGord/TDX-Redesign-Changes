@@ -1,0 +1,81 @@
+<style type="text/css">/* Unstyled list */
+            .list-unstyled {
+                padding-left: 0;
+                list-style: none;
+            }
+
+            /* Pulls element to the right */
+            .pull-right {
+                float: right !important;
+            }
+
+            /* Styling for all business hours */
+            .business-hours .opening-hours li {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            /* Alternating grey background for days */
+            .opening-hours li:nth-child(odd) {
+                background-color: #dfdfdf;
+                /* Light grey */
+            }
+
+            .opening-hours li:nth-child(even) {
+                background-color: #FFFFFF;
+                /* White */
+            }
+
+            /* Highlight styling for the current day */
+            .business-hours .highlight {
+                background-color: #e58117 !important;
+                /* Orange highlight with higher priority */
+                color: #FFFFFF;
+                /* White text for readability */
+                padding: 10px;
+                /* Add some spacing */
+                /* border-radius: 4px; */
+                /* Rounded corners for a clean look */
+            }
+</style>
+<script>
+            // Business hours configuration
+            const hours = {
+                0: { start: 12, end: 21 },
+                1: { start: 7, end: 21 },
+                2: { start: 7, end: 21 },
+                3: { start: 7, end: 21 },
+                4: { start: 7, end: 21 },
+                5: { start: 7, end: 18 },
+                6: { start: 12, end: 17 }
+            };
+
+            const now = new Date();
+            const currentDayIndex = now.getDay(); // Get the current day (0 for Sunday)
+            const currentHour = now.getHours() + now.getMinutes() / 60; // Current hour in decimals (e.g., 8:30 -> 8.5)
+
+            const businessHoursList = document.querySelectorAll(".opening-hours li");
+
+            businessHoursList.forEach((li, index) => {
+                if (index === currentDayIndex) {
+                    li.classList.add("highlight"); // Highlight the current day
+                } else {
+                    li.classList.remove("highlight");
+                }
+            });
+        </script>
+<div class="business-hours">
+<h2 align="center" style="margin-bottom: 12px;">Hours of Operation</h2>
+
+<h5 align="left" style="font-size: 16px; padding-top: 3px; padding-bottom: 10px;">The ITS Helpdesk is located in Crisp Hall 102, across from the Traffic Office.</h5>
+
+<ul class="list-unstyled opening-hours">
+	<li><strong>Sunday</strong> <span class="pull-right">12:00PM - 9:00PM</span></li>
+	<li><strong>Monday</strong> <span class="pull-right">7:00AM - 9:00PM</span></li>
+	<li><strong>Tuesday</strong> <span class="pull-right">7:00AM - 9:00PM</span></li>
+	<li><strong>Wednesday</strong> <span class="pull-right">7:00AM - 9:00PM</span></li>
+	<li><strong>Thursday</strong> <span class="pull-right">7:00AM - 9:00PM</span></li>
+	<li><strong>Friday</strong> <span class="pull-right">7:00AM - 6:00PM</span></li>
+	<li><strong>Saturday</strong> <span class="pull-right">12:00PM - 5:00PM</span></li>
+</ul>
+</div>
