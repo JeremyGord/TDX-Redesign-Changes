@@ -1,0 +1,135 @@
+<style type="text/css">
+</style>
+<!-- TABLET/LAPTOP/DESKTOP IMAGE -->
+<div align="center" class="col-md-12 hidden-sm hidden-xs" style="background-image:
+            linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 75%),
+            url('https://www.utm.edu/visit-ut-martin/_media/DJI_0164-Enhanced-NR.jpg');
+            width: 100%; height: 400px; background-position: 60% 13%"><!-- INFORMATION BOX -->
+<div class="row">
+<div class="col-md-6" style="margin: 50px 20px 0">
+<div class="row" style="padding: 15px">
+<div align="left" class="well"><!-- WELL HEADER -->
+<h1><strong>UTM ITS Client Portal</strong></h1>
+
+<p>Submit tickets, report issues, request services, and find answers to your technology-related questions.</p>
+</div>
+<!-- SEARCH BAR -->
+
+<div class="center-block">
+<div class="gutter-bottom input-group site-search" id="SiteSearch-4063fb83634d41be9d18cca8115403c1" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+<div class="input-group-btn" id="SiteSearch-dropdown-4063fb83634d41be9d18cca8115403c1"><button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-component="all" data-toggle="dropdown" id="SiteSearch-filter-4063fb83634d41be9d18cca8115403c1" title="Filter your search by category" type="button"><span class="fa-solid fa-solid fa-earth-americas"></span><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-caret-down"></span> <span class="sr-only"> Filter your search by category. Current category: <span class="js-current-component">All</span> </span></button>
+
+<ul aria-label="Filter your search by category" class="dropdown-menu" role="menu" style="z-index: 90;" tabindex="-1">
+	<li><a data-component="all" data-component-icon="fa-solid fa-earth-americas" data-component-text="All" href="javascript:void(0);" role="menuitem" title="Search all areas"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-earth-americas"></span> All </a></li>
+	<li aria-hidden="true" class="divider">&nbsp;</li>
+	<li role="presentation"><a data-component="kb" data-component-icon="fa-lightbulb" data-component-text="Knowledge Base" href="javascript:void(0);" role="menuitem" title="Search Knowledge Base"><span aria-hidden="true" class="fa-regular fa-fw fa-nopad fa-lightbulb"></span> Knowledge Base </a></li>
+	<li role="presentation"><a data-component="sc" data-component-icon="fa-compass" data-component-text="Service Catalog" href="javascript:void(0);" role="menuitem" title="Search Service Catalog"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-compass"></span> Service Catalog </a></li>
+	<li role="presentation"><a data-component="q" data-component-icon="fa-comments" data-component-text="Questions" href="javascript:void(0);" role="menuitem" title="Search Questions"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-comments"></span> Questions </a></li>
+</ul>
+</div>
+<label class="sr-only" for="SiteSearch-text-4063fb83634d41be9d18cca8115403c1">Search All</label> <input autocomplete="off" class="form-control" id="SiteSearch-text-4063fb83634d41be9d18cca8115403c1" placeholder="Search All" title="To search for items with a specific tag, enter the # symbol followed by the name of the tag.
+                                    To search for items using exact match, place double quotes around your text." type="text" /> <span class="input-group-btn"><button class="btn btn-default" id="SiteSearch-button-4063fb83634d41be9d18cca8115403c1" title="Search" type="button"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-search blue"></span> <span class="sr-only">Search</span></button> </span></div>
+<script>
+$(function () {
+    // Initialize SiteSearch for desktop
+    var desktopSiteSearch = new TeamDynamix.SiteSearch({
+        searchUrl: "/SBTDClient/2421/ITS-Portal/Shared/Search",
+        enableAutocompleteSearch: true,
+        autocompleteSearchUrl: '/SBTDClient/2421/ITS-Portal/Shared/AutocompleteSearch',
+        autocompleteResultsPosition: 'absolute',
+        autocompleteResultsZIndex: 90,
+        searchTextBoxSelector: '#SiteSearch-text-4063fb83634d41be9d18cca8115403c1',
+        searchComponentFilterButtonSelector: '#SiteSearch-filter-4063fb83634d41be9d18cca8115403c1',
+        searchButtonSelector: '#SiteSearch-button-4063fb83634d41be9d18cca8115403c1',
+        searchFilterDropdownSelector: '#SiteSearch-dropdown-4063fb83634d41be9d18cca8115403c1',
+        showKnowledgeBaseOption: true,
+        showServicesOption: true,
+        showForumsOption: true,
+        autoFocusSearch: false
+    });
+
+    // Initialize SiteSearch for mobile
+    var mobileSiteSearch = new TeamDynamix.SiteSearch({
+        searchUrl: "/SBTDClient/2421/ITS-Portal/Shared/Search",
+        enableAutocompleteSearch: true,
+        autocompleteSearchUrl: '/SBTDClient/2421/ITS-Portal/Shared/AutocompleteSearch',
+        autocompleteResultsPosition: 'absolute',
+        autocompleteResultsZIndex: 90,
+        searchTextBoxSelector: '#SiteSearch-text-5f205e78393b4c359930df60331353e8', // Mobile text box selector
+        searchComponentFilterButtonSelector: '#SiteSearch-filter-5f205e78393b4c359930df60331353e8', // Mobile filter button
+        searchButtonSelector: '#SiteSearch-button-5f205e78393b4c359930df60331353e8', // Mobile search button
+        searchFilterDropdownSelector: '#SiteSearch-dropdown-5f205e78393b4c359930df60331353e8', // Mobile dropdown
+        showKnowledgeBaseOption: true,
+        showServicesOption: true,
+        showForumsOption: true,
+        autoFocusSearch: false
+    });
+});
+
+// Function to dynamically update the search bar placeholder
+function setupSearchPlaceholder(dropdownId, textBoxId) {
+  document.querySelector(`#${dropdownId}`).addEventListener('click', function (event) {
+    const clickedItem = event.target.closest('a[data-component-text]');
+    if (clickedItem) {
+      const newPlaceholder = clickedItem.getAttribute('data-component-text');
+      document.querySelector(`#${textBoxId}`).setAttribute('placeholder', `Search ${newPlaceholder}`);
+    }
+  });
+}
+
+// Apply the functionality to desktop
+setupSearchPlaceholder('SiteSearch-dropdown-4063fb83634d41be9d18cca8115403c1', 'SiteSearch-text-4063fb83634d41be9d18cca8115403c1');
+
+// Apply the functionality to mobile
+setupSearchPlaceholder('SiteSearch-dropdown-5f205e78393b4c359930df60331353e8', 'SiteSearch-text-5f205e78393b4c359930df60331353e8');
+
+                            </script></div>
+<!-- REQUEST BUTTONS -->
+
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/Requests/ServiceCatalog" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">Submit Request</a></div>
+
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/Requests/TicketRequests/" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">View Requests</a></div>
+
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/KB/" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">Knowledge Base</a></div>
+</div>
+</div>
+</div>
+</div>
+<!-- PHONE IMAGE -->
+
+<div align="center" class="col-md-12 hidden-md hidden-lg" style="background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 60%), url('https://tcglivenew.s3.amazonaws.com/images/school/2988d479-1b5a-46b1-b2a0-318c998b8de2.jpg');
+        min-height: 500px; background-position: 20% -1400%"><!-- INFORMATION BOX -->
+<div class="row">
+<div class="col-md-6" style="margin: 5px">
+<div class="row">
+<div align="left" class="well"><!-- WELL HEADER --><img alt="" src="https://utm.teamdynamix.com/SBTDPortal/BE/Logo/427/2421" style="max-width: 350px; padding: 15px 0 30px" />
+<h1><strong>UTM ITS Client Portal</strong></h1>
+
+<p>Submit tickets, report issues, request services, and find answers to your technology-related questions.</p>
+
+<hr /> <!-- SEARCH BAR -->
+<div class="gutter-bottom input-group site-search" style="width: 100%">
+<div class="gutter-bottom input-group site-search" id="SiteSearch-5f205e78393b4c359930df60331353e8">
+<div class="input-group-btn" id="SiteSearch-dropdown-5f205e78393b4c359930df60331353e8"><button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-component="all" data-toggle="dropdown" id="SiteSearch-filter-5f205e78393b4c359930df60331353e8" title="Filter your search by category" type="button"><span class="fa-solid fa-solid fa-earth-americas"></span><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-caret-down"></span> <span class="sr-only"> Filter your search by category. Current category: <span class="js-current-component">All</span> </span></button>
+
+<ul aria-label="Filter your search by category" class="dropdown-menu" role="menu" tabindex="-1">
+	<li><a data-component="all" data-component-icon="fa-solid fa-earth-americas" data-component-text="All" href="javascript:void(0);" role="menuitem" title="Search all areas"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-earth-americas"></span> All </a></li>
+	<li aria-hidden="true" class="divider">&nbsp;</li>
+	<li role="presentation"><a data-component="kb" data-component-icon="fa-lightbulb" data-component-text="Knowledge Base" href="javascript:void(0);" role="menuitem" title="Search Knowledge Base"><span aria-hidden="true" class="fa-regular fa-fw fa-nopad fa-lightbulb"></span> Knowledge Base </a></li>
+	<li role="presentation"><a data-component="sc" data-component-icon="fa-compass" data-component-text="Service Catalog" href="javascript:void(0);" role="menuitem" title="Search Service Catalog"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-compass"></span> Service Catalog </a></li>
+	<li role="presentation"><a data-component="q" data-component-icon="fa-comments" data-component-text="Questions" href="javascript:void(0);" role="menuitem" title="Search Questions"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-comments"></span> Questions </a></li>
+</ul>
+</div>
+<label class="sr-only" for="SiteSearch-text-5f205e78393b4c359930df60331353e8">Search All</label> <input autocomplete="on" class="form-control" id="SiteSearch-text-5f205e78393b4c359930df60331353e8" placeholder="Search All" title="To search for items with a specific tag, enter the # symbol followed by the name of the tag. To search for items using exact match, place double quotes around your text." type="text" /> <span class="input-group-btn"><button class="btn btn-default" id="SiteSearch-button-5f205e78393b4c359930df60331353e8" title="Search" type="button"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-search blue"></span> <span class="sr-only">Search</span></button> </span></div>
+</div>
+
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/Requests/ServiceCatalog" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">Submit Request</a></div>
+
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/Requests/TicketRequests/" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">View Requests</a></div>
+
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/KB/" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">Knowledge Base</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
