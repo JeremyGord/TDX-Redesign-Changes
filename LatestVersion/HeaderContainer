@@ -1,14 +1,22 @@
-<style type="text/css">
-</style>
-<!-- TABLET/LAPTOP/DESKTOP IMAGE -->
-<div align="center" class="col-md-12 hidden-sm hidden-xs" style="background-image:
+<div class="col-md-12 hidden-sm hidden-xs" style="position: relative; height: 400px; overflow: hidden;"><!-- CLICKABLE BACKGROUND LAYER WRAPPER -->
+<div id="carouselWrapper" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; cursor: pointer;">
+<div class="carouselImage" style="background: 
             linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 75%),
-            url('https://www.utm.edu/visit-ut-martin/_media/DJI_0164-Enhanced-NR.jpg');
-            width: 100%; height: 400px; background-position: 60% 13%"><!-- INFORMATION BOX -->
-<div class="row">
+            url('https://www.utm.edu/visit-ut-martin/_media/DJI_0164-Enhanced-NR.jpg'); 
+            background-size: cover; background-position: 60% 13%;
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 2;">&nbsp;</div>
+
+<div class="carouselImage" style="background: 
+            linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 75%),
+            url('https://reupeducation.com/wp-content/uploads/2022/08/ut-martin.jpg'); 
+            background-size: cover; background-position: 60% 13%;
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; display: none;">&nbsp;</div>
+</div>
+<!-- OVERLAYED CONTENT -->
+<div class="row" style="position: relative; z-index: 2; height: 100%;">
 <div class="col-md-6" style="margin: 50px 20px 0">
 <div class="row" style="padding: 15px">
-<div align="left" class="well"><!-- WELL HEADER -->
+<div align="left" class="well">
 <h1><strong>UTM ITS Client Portal</strong></h1>
 
 <p>Submit tickets, report issues, request services, and find answers to your technology-related questions.</p>
@@ -29,8 +37,37 @@
 </div>
 <label class="sr-only" for="SiteSearch-text-4063fb83634d41be9d18cca8115403c1">Search All</label> <input autocomplete="off" class="form-control" id="SiteSearch-text-4063fb83634d41be9d18cca8115403c1" placeholder="Search All" title="To search for items with a specific tag, enter the # symbol followed by the name of the tag.
                                     To search for items using exact match, place double quotes around your text." type="text" /> <span class="input-group-btn"><button class="btn btn-default" id="SiteSearch-button-4063fb83634d41be9d18cca8115403c1" title="Search" type="button"><span aria-hidden="true" class="fa-solid fa-fw fa-nopad fa-search blue"></span> <span class="sr-only">Search</span></button> </span></div>
+</div>
+<!-- REQUEST BUTTONS -->
+
+<div class="row" style="margin-top: 20px;">
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/Requests/ServiceCatalog" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; 
+                           letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">Submit Request</a></div>
+
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/Requests/TicketRequests/" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; 
+                           letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">View Requests</a></div>
+
+<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/KB/" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; 
+                           letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">Knowledge Base</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <script>
-$(function () {
+$(document).ready(function () {
+    let images = $('.carouselImage');
+    let currentIndex = 0;
+
+    function cycleImages() {
+        images.eq(currentIndex).fadeOut(1200, function () {
+            currentIndex = (currentIndex + 1) % images.length;
+            images.eq(currentIndex).fadeIn(1200);
+        });
+    }
+
+    setInterval(cycleImages, 8000); // Change every 8 seconds
+
     // Initialize SiteSearch for desktop
     var desktopSiteSearch = new TeamDynamix.SiteSearch({
         searchUrl: "/SBTDClient/2421/ITS-Portal/Shared/Search",
@@ -64,9 +101,8 @@ $(function () {
         showForumsOption: true,
         autoFocusSearch: false
     });
-});
 
-// Function to dynamically update the search bar placeholder
+ // Function to dynamically update the search bar placeholder
 function setupSearchPlaceholder(dropdownId, textBoxId) {
   document.querySelector(`#${dropdownId}`).addEventListener('click', function (event) {
     const clickedItem = event.target.closest('a[data-component-text]');
@@ -83,19 +119,12 @@ setupSearchPlaceholder('SiteSearch-dropdown-4063fb83634d41be9d18cca8115403c1', '
 // Apply the functionality to mobile
 setupSearchPlaceholder('SiteSearch-dropdown-5f205e78393b4c359930df60331353e8', 'SiteSearch-text-5f205e78393b4c359930df60331353e8');
 
-                            </script></div>
-<!-- REQUEST BUTTONS -->
+    // Apply the function to both desktop & mobile search bars
+    setupSearchPlaceholder('SiteSearch-dropdown-4063fb83634d41be9d18cca8115403c1', 'SiteSearch-text-4063fb83634d41be9d18cca8115403c1');
+    setupSearchPlaceholder('SiteSearch-dropdown-5f205e78393b4c359930df60331353e8', 'SiteSearch-text-5f205e78393b4c359930df60331353e8');
+});
 
-<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/Requests/ServiceCatalog" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">Submit Request</a></div>
-
-<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/Requests/TicketRequests/" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">View Requests</a></div>
-
-<div class="col-md-4"><a class="DetailAction btn-primary" href="https://utm.teamdynamix.com/TDClient/2421/ITS-Portal/KB/" style="text-align: center; font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1; color: white;" target="_blank">Knowledge Base</a></div>
-</div>
-</div>
-</div>
-</div>
-<!-- PHONE IMAGE -->
+</script>
 
 <div align="center" class="col-md-12 hidden-md hidden-lg" style="background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 60%), url('https://tcglivenew.s3.amazonaws.com/images/school/2988d479-1b5a-46b1-b2a0-318c998b8de2.jpg');
         min-height: 500px; background-position: 20% -1400%"><!-- INFORMATION BOX -->
@@ -131,5 +160,8 @@ setupSearchPlaceholder('SiteSearch-dropdown-5f205e78393b4c359930df60331353e8', '
 </div>
 </div>
 </div>
+</div>
+</div>
+
 </div>
 </div>
